@@ -1,7 +1,9 @@
 const cubePieces=[...document.querySelectorAll(".cube-piece")]
 const styleTag=document.querySelector("style")
 const DUMMY=document.querySelector(".dummy")
-const buttons=[...document.querySelectorAll(".buttons-container button")]
+const movesbuttons=[...document.querySelectorAll(".buttons-container button")]
+const rotateButtons=document.querySelectorAll(".rotate button")
+const container=document.querySelector(".container")
 
 let frontFace=[1,2,3,4,5,6,7,8,9]
 let rightFace=[10,11,12,13,14,15,16,17,18]
@@ -131,6 +133,24 @@ const dummy_function=(move)=>{
             angle=90
         }
     }
+    else if(move==="rotateLeft" || move==="rotateRight"){
+        pieces=[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26]
+        axis="Z"
+        if(move=="rotateLeft"){
+            angle=90
+        }else{
+            angle=-90
+        }
+    }
+    else if(move==="rotateUp" || move==="rotateDown"){
+        pieces=[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26]
+        axis="X"
+        if(move=="rotateUp"){
+            angle=90
+        }else{
+            angle=-90
+        }
+    }
     dummy_fill(pieces)
     // hiding core pieces
     pieces.forEach(p=>{
@@ -156,6 +176,47 @@ const rotation=(spin)=>{
         rotation("clockwise")
         rotation("clockwise")
         rotation("clockwise")
+    }
+    // some error over here
+    else if(spin=="rotateUp"){
+        _move_("R")
+        _move_("L!")
+        let temp=[...[frontFace[1],frontFace[4],frontFace[7]]]
+        frontFace[1]=bottomFace[1]
+        frontFace[4]=bottomFace[4]
+        frontFace[7]=bottomFace[7]
+
+        bottomFace[1]=backFace[7]
+        bottomFace[4]=backFace[4]
+        bottomFace[7]=backFace[1]
+
+        backFace[1]=topFace[7]
+        backFace[4]=topFace[4]
+        backFace[7]=topFace[1]
+
+        topFace[1]=temp[0]
+        topFace[4]=temp[1]
+        topFace[7]=temp[2]
+    }
+    else if(spin=="rotateDown"){
+        _move_("R!")
+        _move_("L")
+        let temp=[...[frontFace[1],frontFace[4],frontFace[7]]]
+        frontFace[1]=topFace[1]
+        frontFace[4]=topFace[4]
+        frontFace[7]=topFace[7]
+
+        topFace[1]=backFace[7]
+        topFace[4]=backFace[4]
+        topFace[7]=backFace[1]
+
+        backFace[1]=bottomFace[7]
+        backFace[4]=bottomFace[4]
+        backFace[7]=bottomFace[1]
+
+        bottomFace[1]=temp[0]
+        bottomFace[4]=temp[1]
+        bottomFace[7]=temp[2]
     }
 }
 const _move_=(m)=>{
@@ -272,6 +333,18 @@ const _move_=(m)=>{
         _move_("D!")
         _move_("D!")
     }
+    else if(m==="rotateLeft"){
+        rotation("clockwise")
+    }
+    else if(m==="rotateRight"){
+        rotation("anticlockwise")
+    }
+    else if(m==="rotateUp"){
+        rotation("rotateUp")
+    }
+    else if(m==="rotateDown"){
+        rotation("rotateDown")
+    }
 }
 
 const MOVE=(move)=>{
@@ -299,7 +372,6 @@ window.addEventListener("keyup",(e)=>{
     e.preventDefault()
 
     // e.g: (u)=>Up(U) (shift+u)=>Up Prime(U!)
-
     // need to create a time function so that user can't rapidly press key and mess up interface->done
     if(go==true){
         if(e.key=="u"){
@@ -350,6 +422,22 @@ window.addEventListener("keyup",(e)=>{
             MOVE("D!")
             go=false
         }
+        else if(e.key=="ArrowRight"){
+            MOVE("rotateRight")
+            go=false
+        }
+        else if(e.key=="ArrowLeft"){
+            MOVE("rotateLeft")
+            go=false
+        }
+        else if(e.key==="ArrowUp"){
+            MOVE("rotateUp")
+            go=false
+        }
+        else if(e.key==="ArrowDown"){
+            MOVE("rotateDown")
+            go=false
+        }
         else{
             go=true
         }
@@ -361,7 +449,7 @@ window.addEventListener("keyup",(e)=>{
         }
     }
 })
-buttons.forEach(btn=>{
+movesbuttons.forEach(btn=>{
     btn.addEventListener("click",()=>{
         if(go===true){
             const m=btn.innerHTML
@@ -373,7 +461,18 @@ buttons.forEach(btn=>{
         }
     })
 })
-
+rotateButtons.forEach(btn=>{
+    btn.addEventListener("click",()=>{
+        if(go===true){
+            const m=btn.id
+            MOVE(m)
+            go=false
+            setTimeout(()=>{
+                go=true
+            },560)
+        }
+    })
+})
 // algorithms
 const algo=(name)=>{
     let movesList=algorithms[name]
