@@ -8,7 +8,6 @@ body {
     width: 100vw;
     height: 100vh;
     background-color: white;
-    overflow: hidden;
 }
 
 .container {
@@ -153,16 +152,6 @@ body {
     font-size: 22px;
     padding-left: 10px;
 }
-.cross{
-    position: absolute;
-    right: 3px;
-    top:-2px;
-    background-color: transparent;
-    color: brown;
-    border: none;
-    cursor: pointer;
-    font-size: 20px;
-}
 .buttons-container{
     display: flex;
     align-items: center;
@@ -194,11 +183,14 @@ body {
     }
 }
 @media(max-width:990px){
+    .container{
+        height: 67%;
+    }
     .rubix-cube{
         transform: rotateX(66deg) rotateY(0deg) rotateZ(45deg) scaleX(80%) scaleY(80%) scaleZ(80%);
     }
     .sidebar{
-        bottom:20px;
+        bottom:-168px;
     }
 }
 @media(max-width:450px){
