@@ -1,0 +1,208 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    background-color: white;
+    overflow: hidden;
+}
+
+.container {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.rubix-cube {
+    width: 300px;
+    height: 300px;
+
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    transform-style: preserve-3d;
+    perspective: none;
+    transform-origin: center center -101px;
+    transform: rotateX(66deg) rotateY(0deg) rotateZ(45deg);
+
+}
+
+.cube-piece {
+    width: 100px;
+    height: 100px;
+
+    position: absolute;
+    top: 66.5%;
+    left: -33.5%;
+
+    transform-style: preserve-3d;
+    perspective: none;
+}
+
+.cube-piece div {
+    width: 100px;
+    height: 100px;
+    border: 6px solid black;
+    border-radius: 10px;
+    background-color: whitesmoke;
+}
+
+.left {
+    position: absolute;
+    right: 49px;
+    transform: rotateY(-90deg);
+}
+
+.right {
+    position: absolute;
+    left: 49px;
+    transform: rotateY(90deg);
+
+}
+
+.bottom {
+    position: absolute;
+    transform: translateZ(-49px);
+}
+
+.top {
+    position: absolute;
+    transform: translateZ(49px);
+}
+
+.front {
+    top: 49px;
+    transform: rotateX(90deg);
+    position: absolute;
+}
+
+.back {
+    position: absolute;
+    bottom: 49px;
+    transform: rotateX(-90deg);
+}
+
+/* positining the pieces */
+#cube0{transform:translateX(100px) translateY(0px) translateZ(0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg);}
+#cube1{transform:translateX(200px) translateY(0px) translateZ(0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg);}
+#cube2{transform:translateX(300px) translateY(0px) translateZ(0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg);}
+#cube3{transform:translateX(100px) translateY(-100px) translateZ(0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg);}
+#cube4{transform:translateX(200px) translateY(-100px) translateZ(0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg);}
+#cube5{transform:translateX(300px) translateY(-100px) translateZ(0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg);}
+#cube6{transform:translateX(100px) translateY(-200px) translateZ(0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg);}
+#cube7{transform:translateX(200px) translateY(-200px) translateZ(0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg);}
+#cube8{transform:translateX(300px) translateY(-200px) translateZ(0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg);}
+#cube9{transform:translateX(100px) translateY(0px) translateZ(-100px) rotateX(0deg) rotateY(0deg) rotateZ(0deg);}
+#cube10{transform:translateX(200px) translateY(0px) translateZ(-100px) rotateX(0deg) rotateY(0deg) rotateZ(0deg);}
+#cube11{transform:translateX(300px) translateY(0px) translateZ(-100px) rotateX(0deg) rotateY(0deg) rotateZ(0deg);}
+#cube12{transform:translateX(100px) translateY(-100px) translateZ(-100px) rotateX(0deg) rotateY(0deg) rotateZ(0deg);}
+#cube13{transform:translateX(200px) translateY(-100px) translateZ(-100px) rotateX(0deg) rotateY(0deg) rotateZ(0deg);}
+#cube14{transform:translateX(300px) translateY(-100px) translateZ(-100px) rotateX(0deg) rotateY(0deg) rotateZ(0deg);}
+#cube15{transform:translateX(100px) translateY(-200px) translateZ(-100px) rotateX(0deg) rotateY(0deg) rotateZ(0deg);}
+#cube16{transform:translateX(200px) translateY(-200px) translateZ(-100px) rotateX(0deg) rotateY(0deg) rotateZ(0deg);}
+#cube17{transform:translateX(300px) translateY(-200px) translateZ(-100px) rotateX(0deg) rotateY(0deg) rotateZ(0deg);}
+#cube18{transform:translateX(100px) translateY(0px) translateZ(-200px) rotateX(0deg) rotateY(0deg) rotateZ(0deg);}
+#cube19{transform:translateX(200px) translateY(0px) translateZ(-200px) rotateX(0deg) rotateY(0deg) rotateZ(0deg);}
+#cube20{transform:translateX(300px) translateY(0px) translateZ(-200px) rotateX(0deg) rotateY(0deg) rotateZ(0deg);}
+#cube21{transform:translateX(100px) translateY(-100px) translateZ(-200px) rotateX(0deg) rotateY(0deg) rotateZ(0deg);}
+#cube22{transform:translateX(200px) translateY(-100px) translateZ(-200px) rotateX(0deg) rotateY(0deg) rotateZ(0deg);}
+#cube23{transform:translateX(300px) translateY(-100px) translateZ(-200px) rotateX(0deg) rotateY(0deg) rotateZ(0deg);}
+#cube24{transform:translateX(100px) translateY(-200px) translateZ(-200px) rotateX(0deg) rotateY(0deg) rotateZ(0deg);}
+#cube25{transform:translateX(200px) translateY(-200px) translateZ(-200px) rotateX(0deg) rotateY(0deg) rotateZ(0deg);}
+#cube26{transform:translateX(300px) translateY(-200px) translateZ(-200px) rotateX(0deg) rotateY(0deg) rotateZ(0deg);}
+    
+
+.hidden {
+    display: none;
+}
+.invisible{
+    visibility: hidden;
+}
+
+.dummy {
+    width: 300px;
+    height: 300px;
+    transform-style: preserve-3d;
+    transform-origin: center center -100px;
+    position: absolute;
+}
+
+.sidebar{
+    max-width: 260px;
+    padding: 10px;
+    border: 2px solid black;
+    border-radius: 10px;
+    background-color: #f1f5f8;
+    position: absolute ;
+    transition: 0.3s linear;
+}
+.title{
+    position: relative;
+    margin-bottom: 10px;
+    border-bottom: 1px solid black;
+}
+.title h2{
+    font-size: 22px;
+    padding-left: 10px;
+}
+.cross{
+    position: absolute;
+    right: 3px;
+    top:-2px;
+    background-color: transparent;
+    color: brown;
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+}
+.buttons-container{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap:4px;
+    flex-wrap: wrap;
+    flex-shrink: 0;
+}
+.buttons-container button{
+    width: 50px;
+    height: 33px;
+    background-color: #096c5e;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 600;
+    letter-spacing: 2px;
+}
+.slide-hide{
+    transform: translateX(100%);
+}
+.slide-show{
+    transform: translateX(0%);
+}
+@media(min-width:991px){
+    .sidebar{
+        right: 1px;
+    }
+}
+@media(max-width:990px){
+    .rubix-cube{
+        transform: rotateX(66deg) rotateY(0deg) rotateZ(45deg) scaleX(80%) scaleY(80%) scaleZ(80%);
+    }
+    .sidebar{
+        bottom:20px;
+    }
+}
+@media(max-width:450px){
+    .rubix-cube{
+        transform: rotateX(66deg) rotateY(0deg) rotateZ(45deg) scaleX(70%) scaleY(70%) scaleZ(70%);
+    }
+}

@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rubix-Cube</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="rubix-cube">
+
+            <!-- top layer -->
+
+            <div id="cube0" class="cube-piece">
+                <div class="left" id="l2"></div>
+                <div class="front" id="f0"></div>
+                <div class="back"></div>
+                <div class="right"></div>
+                <div class="bottom"></div>
+                <div class="top" id="t6"></div>
+            </div>
+            <div id="cube1" class="cube-piece">
+                <div class="left"></div>
+                <div class="front" id="f1"></div>
+                <div class="back"></div>
+                <div class="right"></div>
+                <div class="bottom"></div>
+                <div class="top" id="t7"></div>
+            </div>
+            <div id="cube2" class="cube-piece">
+                <div class="left"></div>
+                <div class="front" id="f2"></div>
+                <div class="back"></div>
+                <div class="right" id="r0"></div>
+                <div class="bottom"></div>
+                <div class="top" id="t8"></div>
+            </div>
+            <div id="cube3" class="cube-piece">
+                <div class="left" id="l1"></div>
+                <div class="front"></div>
+                <div class="back"></div>
+                <div class="right"></div>
+                <div class="bottom"></div>
+                <div class="top" id="t3"></div>
+            </div>
+            <div id="cube4" class="cube-piece">
+                <div class="left"></div>
+                <div class="front"></div>
+                <div class="back"></div>
+                <div class="right"></div>
+                <div class="bottom"></div>
+                <div class="top" id="t4"></div>
+            </div>
+            <div id="cube5" class="cube-piece">
+                <div class="left"></div>
+                <div class="front"></div>
+                <div class="back"></div>
+                <div class="right" id="r1"></div>
+                <div class="bottom"></div>
+                <div class="top" id="t5"></div>
+            </div>
+            <div id="cube6" class="cube-piece">
+                <div class="left" id="l0"></div>
+                <div class="front"></div>
+                <div class="back" id="ba2"></div>
+                <div class="right"></div>
+                <div class="bottom"></div>
+                <div class="top" id="t0"></div>
+            </div>
+            <div id="cube7" class="cube-piece">
+                <div class="left"></div>
+                <div class="front"></div>
+                <div class="back" id="ba1"></div>
+                <div class="right"></div>
+                <div class="bottom"></div>
+                <div class="top" id="t1"></div>
+            </div>
+            <div id="cube8" class="cube-piece">
+                <div class="left"></div>
+                <div class="front"></div>
+                <div class="back" id="ba0"></div>
+                <div class="right" id="r2"></div>
+                <div class="bottom"></div>
+                <div class="top" id="t2"></div>
+            </div>
+
+            <!-- middle layer -->
+
+            <div id="cube9" class="cube-piece">
+                <div class="left" id="l5"></div>
+                <div class="front" id="f3"></div>
+                <div class="back"></div>
+                <div class="right"></div>
+                <div class="bottom"></div>
+                <div class="top"></div>
+            </div>
+            <div id="cube10" class="cube-piece">
+                <div class="left"></div>
+                <div class="front" id="f4"></div>
+                <div class="back"></div>
+                <div class="right"></div>
+                <div class="bottom"></div>
+                <div class="top"></div>
+            </div>
+            <div id="cube11" class="cube-piece">
+                <div class="left"></div>
+                <div class="front" id="f5"></div>
+                <div class="back"></div>
+                <div class="right" id="r3"></div>
+                <div class="bottom"></div>
+                <div class="top"></div>
+            </div>
+            <div id="cube12" class="cube-piece">
+                <div class="left" id="l4"></div>
+                <div class="front"></div>
+                <div class="back"></div>
+                <div class="right"></div>
+                <div class="bottom"></div>
+                <div class="top"></div>
+            </div>
+            <div id="cube13" class="cube-piece">
+                <div class="left"></div>
+                <div class="front"></div>
+                <div class="back"></div>
+                <div class="right"></div>
+                <div class="bottom"></div>
+                <div class="top"></div>
+            </div>
+            <div id="cube14" class="cube-piece">
+                <div class="left"></div>
+                <div class="front"></div>
+                <div class="back"></div>
+                <div class="right" id="r4"></div>
+                <div class="bottom"></div>
+                <div class="top"></div>
+            </div>
+            <div id="cube15" class="cube-piece">
+                <div class="left" id="l3"></div>
+                <div class="front"></div>
+                <div class="back" id="ba5"></div>
+                <div class="right"></div>
+                <div class="bottom"></div>
+                <div class="top"></div>
+            </div>
+            <div id="cube16" class="cube-piece">
+                <div class="left"></div>
+                <div class="front"></div>
+                <div class="back" id="ba4"></div>
+                <div class="right"></div>
+                <div class="bottom"></div>
+                <div class="top"></div>
+            </div>
+            <div id="cube17" class="cube-piece">
+                <div class="left"></div>
+                <div class="front"></div>
+                <div class="back" id="ba3"></div>
+                <div class="right" id="r5"></div>
+                <div class="bottom"></div>
+                <div class="top"></div>
+            </div>
+
+            <!-- bottom layer -->
+
+            <div id="cube18" class="cube-piece">
+                <div class="left" id="l8"></div>
+                <div class="front" id="f6"></div>
+                <div class="back"></div>
+                <div class="right"></div>
+                <div class="bottom" id="bo0"></div>
+                <div class="top"></div>
+            </div>
+            <div id="cube19" class="cube-piece">
+                <div class="left"></div>
+                <div class="front" id="f7"></div>
+                <div class="back"></div>
+                <div class="right"></div>
+                <div class="bottom" id="bo1"></div>
+                <div class="top"></div>
+            </div>
+            <div id="cube20" class="cube-piece">
+                <div class="left"></div>
+                <div class="front" id="f8"></div>
+                <div class="back"></div>
+                <div class="right" id="r6"></div>
+                <div class="bottom" id="bo2"></div>
+                <div class="top"></div>
+            </div>
+            <div id="cube21" class="cube-piece">
+                <div class="left" id="l7"></div>
+                <div class="front"></div>
+                <div class="back"></div>
+                <div class="right"></div>
+                <div class="bottom" id="bo3"></div>
+                <div class="top"></div>
+            </div>
+            <div id="cube22" class="cube-piece">
+                <div class="left"></div>
+                <div class="front"></div>
+                <div class="back"></div>
+                <div class="right"></div>
+                <div class="bottom" id="bo4"></div>
+                <div class="top"></div>
+            </div>
+            <div id="cube23" class="cube-piece">
+                <div class="left"></div>
+                <div class="front"></div>
+                <div class="back"></div>
+                <div class="right" id="r7"></div>
+                <div class="bottom" id="bo5"></div>
+                <div class="top"></div>
+            </div>
+            <div id="cube24" class="cube-piece">
+                <div class="left" id="l6"></div>
+                <div class="front"></div>
+                <div class="back" id="ba8"></div>
+                <div class="right"></div>
+                <div class="bottom" id="bo6"></div>
+                <div class="top"></div>
+            </div>
+            <div id="cube25" class="cube-piece">
+                <div class="left"></div>
+                <div class="front"></div>
+                <div class="back" id="ba7"></div>
+                <div class="right"></div>
+                <div class="bottom" id="bo7"></div>
+                <div class="top"></div>
+            </div>
+            <div id="cube26" class="cube-piece">
+                <div class="left"></div>
+                <div class="front"></div>
+                <div class="back" id="ba6"></div>
+                <div class="right" id="r8"></div>
+                <div class="bottom" id="bo8"></div>
+                <div class="top"></div>
+            </div>
+
+            <div class="dummy">
+            </div>
+        </div>
+        <div class="sidebar">
+            <div class="title">
+                <h2>MOVES</h2>
+            </div>
+            <div class="buttons-container">
+                <button >U</button>
+                <button >U!</button>
+                <button >R</button>
+                <button >R!</button>
+                <button >F</button>
+                <button >F!</button>
+                <button >L</button>
+                <button >L!</button>
+                <button >B</button>
+                <button >B!</button>
+                <button >D</button>
+                <button >D!</button>
+            </div>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
