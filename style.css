@@ -2,6 +2,7 @@
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
+    user-select: none;
 }
 
 body {
@@ -17,7 +18,17 @@ body {
     align-items: center;
     position: relative;
 }
-
+@keyframes wobbly {
+    0%{
+        transform: rotateX(66deg) rotateY(0deg) rotateZ(45deg) translateZ(0px);
+    }
+    50%{
+        transform: rotateX(66deg) rotateY(0deg) rotateZ(45deg) translateZ(3px);
+    }
+    100%{
+        transform: rotateX(66deg) rotateY(0deg) rotateZ(45deg) translateZ(0px);
+    }
+}
 .rubix-cube {
     width: 300px;
     height: 300px;
@@ -31,7 +42,8 @@ body {
     perspective: none;
     transform-origin: center center -101px;
     transform: rotateX(66deg) rotateY(0deg) rotateZ(45deg);
-
+    transition: 1s linear;
+    animation: wobbly 1s linear infinite;
 }
 
 .cube-piece {
@@ -135,7 +147,7 @@ body {
 }
 
 .sidebar{
-    max-width: 260px;
+    width: fit-content;
     padding: 10px;
     border: 2px solid black;
     border-radius: 10px;
@@ -151,14 +163,51 @@ body {
 .title h2{
     font-size: 22px;
     padding-left: 10px;
+    text-align: center;
+}
+.control{
+    display: flex;
+    align-items: center;
+    gap: 5px;
 }
 .buttons-container{
+    width: 213px;
     display: flex;
     align-items: center;
     justify-content: space-around;
     gap:4px;
     flex-wrap: wrap;
     flex-shrink: 0;
+}
+.rotate{
+    width: 100px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position:relative;
+}
+.rotate button{
+    position: absolute;
+    background-color: #096c5e;
+    color: white;
+    border: none;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+#rotateLeft{
+    left: 0px;
+}
+#rotateRight{
+    right: 0px;
+}
+#rotateUp{
+    top:0px;
+}
+#rotateDown{
+    bottom: 0px;
 }
 .buttons-container button{
     width: 50px;
@@ -188,6 +237,18 @@ body {
     }
     .rubix-cube{
         transform: rotateX(66deg) rotateY(0deg) rotateZ(45deg) scaleX(80%) scaleY(80%) scaleZ(80%);
+        animation: _wobbly_ 1s linear infinite;
+    }
+    @keyframes _wobbly_ {
+        0%{
+            transform: rotateX(66deg) rotateY(0deg) rotateZ(45deg) translateZ(0px) scaleX(80%) scaleY(80%) scaleZ(80%);
+        }
+        50%{
+            transform: rotateX(66deg) rotateY(0deg) rotateZ(45deg) translateZ(3px) scaleX(80%) scaleY(80%) scaleZ(80%);
+        }
+        100%{
+            transform: rotateX(66deg) rotateY(0deg) rotateZ(45deg) translateZ(0px) scaleX(80%) scaleY(80%) scaleZ(80%);
+        }
     }
     .sidebar{
         bottom:-168px;
